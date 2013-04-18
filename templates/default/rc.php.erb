@@ -1,0 +1,36 @@
+<?php
+
+error_reporting(E_ALL);
+
+switch ($___phpsh___codebase_mode) {
+case '':
+  require_once '/var/www/gotryiton.com/current/config/application.php';
+  Go\Go::initialize();
+  $GLOBALS['__phpsh__namespace'] = 'Go';
+  break;
+
+case 'test':
+    // Change this to the path of your globals.php file
+  define('APP_ENVIRONMENT','test');
+  define('TESTING', true);
+  require_once '/var/www/gotryiton.com/current/config/application.php';
+  Go\Go::initialize();
+  $GLOBALS['__phpsh__namespace'] = 'Go';
+  break;
+
+case 'ootd':
+  require_once '/var/www/ootd/current/config/application.php';
+  Ootd\Ootd::initialize();
+  $GLOBALS['__phpsh__namespace'] = 'Ootd';
+  break;
+
+case 'none':
+  // Vanilla php
+  break;
+
+default:
+  fwrite(STDERR, 'Unknown codebase mode '.$___phpsh___codebase_mode."\n");
+  break;
+}
+?>
+
