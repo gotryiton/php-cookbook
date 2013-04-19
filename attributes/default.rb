@@ -104,7 +104,7 @@ default[:php][:fpm][:daemonize] = "yes"
 default[:php][:apc][:max_file_size] = "5M"
 
 default[:php][:arch] = kernel['machine'] =~ /x86_64/ ? "x86_64" : "i386"
-default['php']['54_version'] = "5.4.10"
+default['php']['54_version'] = "5.4.14"
 default['php']['54_configure_options'] = %W{--prefix=#{php['prefix_dir']}
                                           --with-libdir=#{lib_dir}
                                           --with-config-file-path=#{php['conf_dir']}
