@@ -145,7 +145,7 @@ default['php']['54_configure_options'] = %W{--prefix=#{php['prefix_dir']}
                                           --with-readline}
 
 default[:php][:pecl_packages] = {
-  :apc => { :version => "3.1.14" },
+  :apc => { :version => "3.1.13" },
   :memcached => { :version => "2.1.0" },
   :geoip => { :version => "1.0.8" },
   :xdebug => { :version => "2.2.1" },
@@ -157,3 +157,7 @@ default[:php][:pecl_url] = "http://pecl.php.net/get"
 default[:php][:xdebug] = {
   remote_debug: false
 }
+
+default[:php][:phpsh][:version] = "1.4"
+default[:php][:phpsh][:checksum] = "c65395ea91c4732b18543af71eb05b6dea0847c8"
+default[:php][:phpsh][:url] = "https://github.com/gotryiton/phpsh/tarball/#{node[:php][:phpsh][:version]}"

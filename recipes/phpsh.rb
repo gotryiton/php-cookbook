@@ -31,10 +31,11 @@
   end
 end
 
-phpsh_version = 1.4
-cookbook_file "#{Chef::Config[:file_cache_path]}/phpsh.tar.gz" do
-  backup false
-  source "gotryiton-phpsh.tar.gz"
+phpsh_version = node[:php][:phpsh][:version]
+
+remote_file "#{Chef::Config[:file_cache_path]}/phpsh.tar.gz" do
+  source node[:php][:phpsh][:url]
+  checksum node[:php][:phpsh][:checksum]
   mode "0644"
   not_if "phpsh --version | grep #{phpsh_version}"
 end
