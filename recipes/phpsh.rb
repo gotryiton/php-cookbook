@@ -25,12 +25,10 @@
 # sudo python setup.py install
 # phpsh
 
-package "python-setuptools" do
-  action :upgrade
-end
-
-package "python2.7-dev" do
-  action :upgrade
+%w{ libncurses5-dev python-setuptools python2.7-dev}.each do |package_name|
+  package package_name do
+    action :install
+  end
 end
 
 phpsh_version = 1.4
