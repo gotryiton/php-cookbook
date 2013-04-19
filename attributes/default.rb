@@ -15,7 +15,7 @@
 # limitations under the License.
 #
 
-lib_dir = kernel['machine'] =~ /x86_64/ ? 'lib64' : 'lib'
+lib_dir = kernel['machine'] =~ /x86_64/ ? 'lib' : 'lib'
 
 default['php']['install_method'] = 'package'
 
