@@ -159,5 +159,5 @@ default[:php][:xdebug] = {
 }
 
 default[:php][:phpsh][:version] = "1.4"
-default[:php][:phpsh][:checksum] = "c65395ea91c4732b18543af71eb05b6dea0847c8"
-default[:php][:phpsh][:url] = "https://github.com/gotryiton/phpsh/tarball/#{node[:php][:phpsh][:version]}"
+default[:php][:phpsh][:checksum] = "ff6979351c3f58b3d1ddc6ac722dc68dc60e1dd4"
+default[:php][:phpsh][:url] = "http://gotryiton.packages.s3.amazonaws.com/gotryiton-phpsh-#{node[:php][:phpsh][:version]}.tar.gz"

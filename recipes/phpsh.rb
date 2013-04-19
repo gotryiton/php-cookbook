@@ -58,7 +58,7 @@ bash "tar phpsh" do
 end
 
 bash "install phpsh" do
-  cwd "#{Chef::Config[:file_cache_path]}/gotryiton-phpsh-38e70ca"
+  cwd "#{Chef::Config[:file_cache_path]}/gotryiton-phpsh"
   code <<-EOF
   python setup.by build
   sudo python setup.py install
