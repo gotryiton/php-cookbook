@@ -55,13 +55,4 @@ service "php5-fpm" do
     ), :delayed
 end
 
-include_recipe "monit"
-
-template "/etc/monit/conf.d/php5-fpm.conf" do
-  owner 'root'
-  group 'root'
-  mode 00644
-  source 'php5-fpm_monit.conf.erb'
-  notifies :restart, "service[monit]"
-end
-
+monit_watch "php-fpm"
