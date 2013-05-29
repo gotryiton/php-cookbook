@@ -142,7 +142,10 @@ default['php']['54_configure_options'] = %W{--prefix=#{php['prefix_dir']}
                                           --with-sqlite3
                                           --with-pdo-mysql=/usr/bin/mysql_config
                                           --with-pdo-sqlite
-                                          --with-readline}
+                                          --with-readline
+                                          --enable-intl
+                                          --disable-fileinfo
+                                          }
 
 default[:php][:pecl_packages] = {
   :apc => { :version => "3.1.13" },
